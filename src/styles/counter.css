@@ -7,7 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
+    width: 150px;
     height: 30px;
     border: 1px solid;
     border-radius: 6px;
@@ -28,4 +28,15 @@
     border-radius: 6px;
     background-color: bisque;
     color: chocolate;
+}
+
+.input {
+    width: 150px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 6px;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 16px;
+    color: rgba(82, 81, 80, 0.336);
 }
