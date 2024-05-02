@@ -7,9 +7,9 @@ function Counter() {
     // Эмуляция запроса на сервер при изменении счетчика - пример использования хука useEffect.
     // Применяется, когда нужно выполнить побочные эффекты (в данном случае выводим в алерт надпись, но, по факту, может быть запрос на 
     // сервер при изменении состояния "count" - об этом говорит аргумент [count]).   
-    // useEffect(() => {
-    //     alert(`Sending request to server with count: ${count}`);
-    // }, [count]);
+    useEffect(() => {
+        alert(`Sending request to server with count: ${count}`);
+    }, [count]);
 
     function up() {
         setCount(prevCount => prevCount + 1);
