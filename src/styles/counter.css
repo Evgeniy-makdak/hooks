@@ -1,0 +1,31 @@
+.counter {
+    margin: 30px auto;
+    width: 100vh;
+}
+
+.mainTitle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 30px;
+    border: 1px solid;
+    border-radius: 6px;
+    font-weight: 700;
+}
+
+.btn {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+}
+
+.btnCounter {
+    margin: 10px;
+    width: 80px;
+    height: 16px;
+    border: 1px solid bisque;
+    border-radius: 6px;
+    background-color: bisque;
+    color: chocolate;
+}
