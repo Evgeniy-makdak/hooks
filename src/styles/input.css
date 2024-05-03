@@ -1,21 +1,12 @@
-.mainTitle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 150px;
-    height: 30px;
-    border: 1px solid;
-    border-radius: 6px;
-    font-weight: 700;
-}
-
 .input {
     width: 150px;
     height: 30px;
-    border: 1px solid;
-    border-radius: 6px;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
+    background: none;
     font-weight: 700;
     text-align: center;
     margin-top: 16px;
     color: rgba(82, 81, 80, 0.336);
+    margin: 30px auto;
 }

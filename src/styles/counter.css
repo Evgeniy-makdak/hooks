@@ -1,23 +1,24 @@
 .counter {
-    margin: 30px auto;
-    width: 100vh;
+    min-width: 970px;
 }
 
 .mainTitle {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 150px;
-    height: 30px;
     border: 1px solid;
     border-radius: 6px;
     font-weight: 700;
+    margin: 30px auto;
+    width: 150px;
+    height: 30px;
 }
 
 .btn {
     display: flex;
     justify-content: space-between;
     width: 30%;
+    margin: 30px auto;
 }
 
 .btnCounter {
