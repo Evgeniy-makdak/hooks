@@ -11,7 +11,6 @@ function Counter() {
     // }, [count]);
 
     const up = () => setCount(prevCount => prevCount + 1);
-
     const down = () => setCount(prevCount => prevCount - 1);
     
 
