@@ -43,3 +43,16 @@ body {
     padding: 1em;
     border-radius: 5px;
 }
+
+.delete {
+    position: absolute;
+    right: 6px;
+    top: 6px;
+    background: none;
+    border: none;
+}
+
+.delete:hover {
+    color: red;
+    cursor: pointer;
+}

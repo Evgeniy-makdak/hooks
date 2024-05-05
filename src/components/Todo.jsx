@@ -12,7 +12,7 @@ function Todo() {
     // Метод .getItem является стандартным методом localStorage, позволяющим получить значения, , сохраненного по определенному ключу в 
     // локальном хранилище браузера.
     const [items, setItems] = useState(
-        JSON.parse(localStorage.getItem('item')) || []
+        JSON.parse(localStorage.getItem('items')) || []
     )
 
     // Данный useEffect работает при изменении items (разумеется, и при первом ререндинге) и преобразует список items в 
@@ -28,7 +28,7 @@ function Todo() {
                 item: item,
                 color: 'orange',
                 defaultPost: {
-                    x: 500,
+                    x: 300,
                     y: -100
                 }
             }
@@ -41,25 +41,48 @@ function Todo() {
         }
     }
 
+    const deleteNode = (id) => {
+        setItems(items.filter((item) => item.id !== id))
+    }
+
+    const updatePos = (data, index) => {
+        let newArray = [...items]
+        newArray[index].defaultPost = { x: data.x, y: data.y }
+        setItems(newArray)
+    }
+
+    const keyPress = (e) => {
+        const code = e.keyCode || e.which
+        if (code === 13) {
+            newItem()
+        }
+    }
+
     return (
         <div>
             {/* Объясню суть этого обработчика событий: onChange={(e) => setItem(e.target.value)}
             onChange указывает на отслеживание изменения в поле input-а. Если мы посмотрим на событие в колбэке "e",
             то у него есть метод target, указывающий на содержимое этого поля, и метод value, который указывает 
             непосредственно на само значение в этом поле. Таким образом мы добиваемся изменения item-а */}
-            <input className="input" type="text" placeholder="Enter task"
-                onChange={(e) => setItem(e.target.value)} />
+            <input className="input" type="text" placeholder="Enter task" value={item}
+                onChange={(e) => setItem(e.target.value)}
+                onKeyPress={(e) => keyPress(e)} />
             <button className="btn_todo" onClick={newItem}>ADD TASK</button>
             {items.map((item, index) => {
                 return (
                     <Draggable
                         key={index}
                         defaultPosition={item.defaultPost}
+                        onStop={(_, data) => {
+                            updatePos(data, index)
+                        }}
                     >
 
-                        <div className="todo_item" style={{backgroundColor: item.color}}>
+                        <div className="todo_item" style={{ backgroundColor: item.color }}>
                             {`${item.item}`}
-                            <button className="delete">X</button>
+                            <button className="delete"
+                                onClick={() => deleteNode(item.id)}
+                            >X</button>
                         </div>
 
                     </Draggable>
