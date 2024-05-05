@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 function Counter() {
-    const [count, setCount] = useState(0);
+    const [count, setCount] = useState(3);
 
     // Эмуляция запроса на сервер при изменении счетчика - пример использования хука useEffect.
     // Применяется, когда нужно выполнить побочные эффекты (в данном случае выводим в алерт надпись, но, по факту, может быть запрос на 

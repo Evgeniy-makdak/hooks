@@ -10,8 +10,8 @@ import Todo from './components/Todo';
 function App() {
   return (
     <div className="App">
-      <Counter />
-      <Input />
+      {/* <Counter />
+      <Input /> */}
       <Todo />
     </div>
   );
